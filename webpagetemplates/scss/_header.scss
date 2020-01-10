@@ -1,55 +1,66 @@
     header {
 
-    background-image: linear-gradient(57deg,blue,purple);
-        height             :80vh;
-        clip-path          : polygon(0% 0%,100% 0%,100% 80%,0% 100%); 
+        background-image: linear-gradient(57deg, blue, purple);
+        height          : 80vh;
+        clip-path       : polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
+
         nav {}
 
         .jumbo {
-            margin-top   : 50px; 
+            margin-top         : 50px;
             // background-color: red; */
-            display         : flex;
-            justify-content : space-around;
-            align-items     : center;
+            display            : flex;
+            justify-content    : space-around;
+            align-items        : center;
 
             //color:$white;
-            #left{
+            #left {
                 img {
                     /*margin-top: 50px;
-                    */display: block;
-                    margin: auto;
-                    width: 250px;
-                    height: 250px;
+                    */
+                    display: block;
+                    margin : auto;
+                    width  : 250px;
+                    height : 250px;
                     @include bradius(5px);
                     box-shadow: 3px 3px 2px 2px #888888;
-                    
-&:hover{
-   
-    transform: scale(1.2);
-    -webkit-transform: scale(1.2);
-    -moz-transform: scale(1.2);
-    -ms-transform: scale(1.2);
-    -o-transform: scale(1.2);
-    transition: transform 3s ease-out;
-    -webkit-transition: transform 3s ease-out;
-    -moz-transition: transform 3s ease-out;
-    -ms-transition: transform 3s ease-out;
-    -o-transition: transform 3s ease-out;
-}
-    }
+
+                    &:hover {
+
+                        transform         : scale(1.2);
+                        -webkit-transform : scale(1.2);
+                        -moz-transform    : scale(1.2);
+                        -ms-transform     : scale(1.2);
+                        -o-transform      : scale(1.2);
+                        transition        : transform 3s ease-out;
+                        -webkit-transition: transform 3s ease-out;
+                        -moz-transition   : transform 3s ease-out;
+                        -ms-transition    : transform 3s ease-out;
+                        -o-transition     : transform 3s ease-out;
+                    }
+                }
             }
-            #right{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            //margin: auto;           
-            color: $white;
-           
-            
-            
+
+            #right {
+                display        : flex;
+                flex-direction : column;
+                // justify-content: center;
+                //margin       : auto;           
+                color          : $white;
+
+                a {
+                    background-image: linear-gradient(57deg, blue, purple);
+
+                    &:hover {
+                        background-image: linear-gradient(57deg, purple, blue);
+                    }
+                }
+
+
+
 
             }
-        
+
         }
     }
 
