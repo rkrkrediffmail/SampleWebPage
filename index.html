@@ -202,108 +202,8 @@
 }
 </style>
      </head>
-    <header>
  <body>
-
-   <!--button type="button" id="logout" class="btn">Logout</button-->
-<input id="chatuid" type="hidden"> <!--conversation id-->
-<input id="product" type="hidden">
-<input id="release" type="hidden">
-<input id="chatid" type="hidden"> <!--indv chat id-->
-<input id="prevquestion" type="hidden">
-<input id="prevresponse" type="hidden">
-<input id="ratingValue" type="hidden">
-<input id="getrating" type="hidden" value="false">
-    <div id="chat-box" class="chat-box modal-content" style="width: 80%; margin-right: 10%; margin-bottom:3%";>
-      <div class="chat-box-header ">Ask Blink
-        <span class="chat-box-toggle"><i class="fa fa-window-close" aria-hidden="true"></i></span>
-      </div>
-      <div class="chat-box-body">
-                  <div class="chat-box-body" style="overflow:initial">
-                  <div class="direct-chat-messages" id="chathistory" style="display:block !important;height:450px; overflow: auto;">
-                  </div>
-                  <table class="commentssection" aria-labelledby="tcbz table" style="width:100%"><th scope="col" style="display:none;"></th>
-            			<tr><td width: 85%;>
-                    <input type="text" id="commentsmsg" name="message" placeholder="Ask a question ..." class="form-control" style="width: 98%;height: 35px;margin: 5px;">
-            				  </td>
-            			       <td style="width:4%;">
-                      <span class="input-group-btn">
-           		<input id="ask" type="button" name="Ask" value="Ask" class="btn" style="border-radius: 4px;height: 35px;"/>
-                        </span>
-                      </td>
-                        <td style="width:7%;">
-                        <input id="ticket" type="button" name="Raise ticket" value="Raise Ticket" class="btn" style="border-radius: 4px;height: 35px;display:none"/>
-                        </td>
-                         <td style="width:2%;">
-                           <button id="pastchat"><i class="fa fa-history"></i></button>
-                         </td>
-            			        </tr>
-            			         </table>
-                         </div>
-      </div>
-</div>
-    <div class="botIcon">
-    	<div id="chat-circle">
-    		<div class="iconInner">
-    			<i class="fa fa-commenting" aria-hidden="true"></i>
-    		</div>
-    	</div>
-      </div>
-<!--** star **/-->
-<!-- Button trigger modal -->
-<button id="starbutton" style="display:none" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel" style="color:white">Rate us</h5>
-        <button style="display:none" id="ratingclose" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-     <section class='rating-widget'>
-  <!-- Rating Stars Box -->
-  <div class='rating-stars text-center'>
-    <ul id='stars'>
-      <li class='star' title='Poor' data-value='1'>
-        <i class='fa fa-star fa-fw'></i>
-      </li>
-      <li class='star' title='Fair' data-value='2'>
-        <i class='fa fa-star fa-fw'></i>
-      </li>
-      <li class='star' title='Good' data-value='3'>
-        <i class='fa fa-star fa-fw'></i>
-      </li>
-      <li class='star' title='Excellent' data-value='4'>
-        <i class='fa fa-star fa-fw'></i>
-      </li>
-      <li class='star' title='WOW!!!' data-value='5'>
-        <i class='fa fa-star fa-fw'></i>
-      </li>
-    </ul>
-  </div>
-  <div class='success-box'>
-    <div class='text-message'></div>
-  </div>
-  <div class="fieldset" style="display: flex;flex-direction: column;background:#eeeeee">
-    <label for="usercomments">Comments</label>
-    <textarea name="usercomments" id="usercomments" cols="20" rows="5" required=""></textarea>
-  </div>
-</section>
-      </div>
-      <div class="modal-footer" style="display:flex;justify-content:center;">
-        <!--button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cance</button-->
-        <button id="saveratings" type="button" class="btn" stye="background: #293276;color: white;width: 90px;">Save</button>
-      </div>
-    </div>
-  </div>
-</div>
-<!--stars-->
-
-      </div>
-
+<header>
      <nav>
        <div class="nav-wrapper">
          <div class="container">
@@ -459,8 +359,106 @@
           <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
         </div>
       </div>
-    </footer>
-    <!-- jQuery CDN -->
+     </footer>
+ <input id="chatuid" type="hidden"> <!--conversation id-->
+<input id="product" type="hidden">
+<input id="release" type="hidden">
+<input id="chatid" type="hidden"> <!--indv chat id-->
+<input id="prevquestion" type="hidden">
+<input id="prevresponse" type="hidden">
+<input id="ratingValue" type="hidden">
+<input id="getrating" type="hidden" value="false">
+    <div id="chat-box" class="chat-box modal-content" style="width: 80%; margin-right: 10%; margin-bottom:3%";>
+      <div class="chat-box-header ">Ask Blink
+        <span class="chat-box-toggle"><i class="fa fa-window-close" aria-hidden="true"></i></span>
+      </div>
+      <div class="chat-box-body">
+                  <div class="chat-box-body" style="overflow:initial">
+                  <div class="direct-chat-messages" id="chathistory" style="display:block !important;height:450px; overflow: auto;">
+                  </div>
+                  <table class="commentssection" aria-labelledby="tcbz table" style="width:100%"><th scope="col" style="display:none;"></th>
+            			<tr><td width: 85%;>
+                    <input type="text" id="commentsmsg" name="message" placeholder="Ask a question ..." class="form-control" style="width: 98%;height: 35px;margin: 5px;">
+            				  </td>
+            			       <td style="width:4%;">
+                      <span class="input-group-btn">
+           		<input id="ask" type="button" name="Ask" value="Ask" class="btn" style="border-radius: 4px;height: 35px;"/>
+                        </span>
+                      </td>
+                        <td style="width:7%;">
+                        <input id="ticket" type="button" name="Raise ticket" value="Raise Ticket" class="btn" style="border-radius: 4px;height: 35px;display:none"/>
+                        </td>
+                         <td style="width:2%;">
+                           <button id="pastchat"><i class="fa fa-history"></i></button>
+                         </td>
+            			        </tr>
+            			         </table>
+                         </div>
+      </div>
+</div>
+    <div class="botIcon">
+    	<div id="chat-circle">
+    		<div class="iconInner">
+    			<i class="fa fa-commenting" aria-hidden="true"></i>
+    		</div>
+    	</div>
+      </div>
+<!--** star **/-->
+<!-- Button trigger modal -->
+<button id="starbutton" style="display:none" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel" style="color:white">Rate us</h5>
+        <button style="display:none" id="ratingclose" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+     <section class='rating-widget'>
+  <!-- Rating Stars Box -->
+  <div class='rating-stars text-center'>
+    <ul id='stars'>
+      <li class='star' title='Poor' data-value='1'>
+        <i class='fa fa-star fa-fw'></i>
+      </li>
+      <li class='star' title='Fair' data-value='2'>
+        <i class='fa fa-star fa-fw'></i>
+      </li>
+      <li class='star' title='Good' data-value='3'>
+        <i class='fa fa-star fa-fw'></i>
+      </li>
+      <li class='star' title='Excellent' data-value='4'>
+        <i class='fa fa-star fa-fw'></i>
+      </li>
+      <li class='star' title='WOW!!!' data-value='5'>
+        <i class='fa fa-star fa-fw'></i>
+      </li>
+    </ul>
+  </div>
+  <div class='success-box'>
+    <div class='text-message'></div>
+  </div>
+  <div class="fieldset" style="display: flex;flex-direction: column;background:#eeeeee">
+    <label for="usercomments">Comments</label>
+    <textarea name="usercomments" id="usercomments" cols="20" rows="5" required=""></textarea>
+  </div>
+</section>
+      </div>
+      <div class="modal-footer" style="display:flex;justify-content:center;">
+        <!--button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cance</button-->
+        <button id="saveratings" type="button" class="btn" stye="background: #293276;color: white;width: 90px;">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--stars-->
+
+      </div>
+
+   <!-- jQuery CDN -->
       <!-- jQuery CDN -->
       <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <!-- Materialize JS CDN -->
