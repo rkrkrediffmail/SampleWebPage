@@ -1,9 +1,10 @@
 /*
-  X-Frame-Options: ALLOW-FROM https://azure-tcsp.rfp.plus/ ALLOW-FROM https://api.rfp.plus/
   X-Content-Type-Options: nosniff
+  X-Frame-Options: ALLOW-FROM https://azure-tcsp.rfp.plus/
   Referrer-Policy: no-referrer
   Permissions-Policy: document-domain=(https://azure-tcsp.rfp.plus/ https://api.rfp.plus/)
   Content-Security-Policy: frame-ancestors https://azure-tcsp.rfp.plus/
   Content-Security-Policy: script-src  'self' 'unsafe-inline' https://api.rfp.plus/ https://azure-tcsp.rfp.plus/ https://cdnjs.cloudflare.com/
+  Content-Security-Policy: style-src 'self' 'unsafe-inline'
   Content-Security-Policy: style-src-elem 'self' 'unsafe-inline'
   Access-Control-Allow-Origin: https://api.rfp.plus/ https://azure-tcsp.rfp.plus/
