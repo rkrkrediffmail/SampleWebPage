@@ -1,0 +1,11 @@
+/*
+  X-Frame-Options: "ALLOW-FROM https://azure-tcsp.rfp.plus/"
+  X-Frame-Options: "ALLOW-FROM https://api.rfp.plus/"
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: no-referrer
+  Permissions-Policy: document-domain=()
+  Content-Security-Policy: script-src 'self'; frame-ancestors 'none';
+  
+  
+ /*
+ Content-Security-Policy: default-src 'self' https://api.rfp.plus/ https://azure-tcsp.rfp.plus/;
