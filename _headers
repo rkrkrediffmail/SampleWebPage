@@ -3,5 +3,8 @@
   X-Content-Type-Options: nosniff
   Referrer-Policy: no-referrer
   Permissions-Policy: document-domain=(https://azure-tcsp.rfp.plus/ https://api.rfp.plus/)
-  Content-Security-Policy: script-src 'self' https://api.rfp.plus/ https://azure-tcsp.rfp.plus/; frame-ancestors https://azure-tcsp.rfp.plus/;
+  Content-Security-Policy: frame-ancestors https://azure-tcsp.rfp.plus/ 'self'
+  Content-Security-Policy: script-src  'self' 'nonce-%{CSP_NONCE}e' https://api.rfp.plus/ https://azure-tcsp.rfp.plus/
+  Content-Security-Policy: style-src-elem 'self' 'unsafe-inline'
   Access-Control-Allow-Origin: https://api.rfp.plus/ https://azure-tcsp.rfp.plus/
+  
