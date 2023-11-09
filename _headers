@@ -8,4 +8,7 @@
   
   
  /*
- Content-Security-Policy: default-src 'self' https://api.rfp.plus/ https://azure-tcsp.rfp.plus/;
+ Content-Security-Policy: default-src 'self' 'https://api.rfp.plus/' 'https://azure-tcsp.rfp.plus/';\
+ script-src  'self' 'nonce-%{CSP_NONCE}e' 'https://api.rfp.plus/' 'https://azure-tcsp.rfp.plus/';
+ style-src  'unsafe-inline' 'self' 'nonce-%{CSP_NONCE}e' 'https://api.rfp.plus/' 'https://azure-tcsp.rfp.plus/';
+ 
