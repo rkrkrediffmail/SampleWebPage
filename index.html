@@ -23,9 +23,299 @@
       main {
         flex: 1 0 auto;
       }
+      .direct-chat-text{
+  color: black;
+}
+
+.dataTables_filter, .dataTables_length{
+  display: none;
+}
+#tcbz_paginate{
+  display: none;
+}
+#tcbz tbody{
+  height:100px;
+  overflow-x: auto;
+}
+
+.selector{
+    position:relative;
+    width:100%;
+    height:50px;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    box-shadow:0 0 16px rgba(0,0,0,.2);
+}
+.selector-item{
+    position:relative;
+    flex-basis:calc(70% / 3);
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+}
+.selector-item_radio{
+    appearance:none;
+    display:none;
+}
+.chat-bubble{
+  border: 1px solid #293276;
+  background: #FFFFFF !important;
+  color: #293276;
+}
+
+.selector-item_label{
+    position:relative;
+    height:110%;
+    width:100%;
+    text-align:center;
+    line-height:400%;
+    font-family: 'Poppins', sans-serif;
+    font-weight:400;
+    transition-duration:.5s;
+    transition-property:transform, box-shadow;
+    transform:none;
+}
+.selector-item_radio:checked + .selector-item_label{
+    background-color:#293276;
+    color:#fff;
+    box-shadow:0 0 4px rgba(0,0,0,.5),0 2px 4px rgba(0,0,0,.5);
+    transform:translateY(-2px);
+}
+
+.seg-control{
+  margin-left: 30% !important;
+  width: 40% !important;
+  background:white;
+  border: 1px solid #293276;
+  border-radius: 8px;
+}
+.bg {
+  background-image: url("temenos-bg1.png");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.chat-bubble {
+  background-color:#d2d6de;
+  padding:7px 10px;
+  margin:2px;
+  -webkit-border-radius: 20px;
+  -webkit-border-bottom-left-radius: 2px;
+  -moz-border-radius: 20px;
+  -moz-border-radius-bottomleft: 2px;
+  border-radius: 8px;
+  display:inline-block;
+}
+.typing {
+  align-items: center;
+  display: flex;
+  height: 17px;
+}
+.typing .dot {
+  animation: mercuryTypingAnimation 1.8s infinite ease-in-out;
+  background-color: white ; //rgba(20,105,69,.7);
+  border-radius: 50%;
+  height: 7px;
+  margin-right: 4px;
+  vertical-align: middle;
+  width: 7px;
+  display: inline-block;
+}
+.typing .dot:nth-child(1) {
+  animation-delay: 200ms;
+}
+.typing .dot:nth-child(2) {
+  animation-delay: 300ms;
+}
+.typing .dot:nth-child(3) {
+  animation-delay: 400ms;
+}
+.typing .dot:last-child {
+  margin-right: 0;
+}
+.right .direct-chat-text {
+    color: white;
+    background: rgb(41, 50, 118);
+}
+@keyframes mercuryTypingAnimation {
+  0% {
+    transform: translateY(0px);
+    background-color:gray; // rgba(20,105,69,.7);
+  }
+  28% {
+    transform: translateY(-7px);
+    background-color:gray; //rgba(20,105,69,.4);
+  }
+  44% {
+    transform: translateY(0px);
+    background-color: gray; //rgba(20,105,69,.2);
+  }
+}
+.choices{
+  cursor: pointer;
+}
+.product-choice{
+  cursor: pointer;
+}
+.botIcon {
+    bottom: 15px;
+    right: 30px;
+    position: fixed;
+    z-index: 9999;
+}
+.iconInner {-webkit-align-items: center;-ms-align-items: center;align-items:
+  center;background: #a64bf4;background:#293276;background-position: 50%;
+  background-size: 300%;border-radius: 50%;color: #fff;
+  cursor: pointer;display: -webkit-box;display: -ms-flexbox;display:
+  flex;-webkit-flex-wrap: wrap;-ms-flex-wrap: wrap;flex-wrap: wrap;
+  font-size: 1.7em;height: 2em;justify-content: center;width: 2em;}
+.chat-box{
+  min-height: 360px;
+  max-height: 100%;
+}
+#chat-history .chat-box-body{
+  min-height: 360px;
+  height:auto;
+}
+#ticket {
+  color: white;
+  background: orange;
+}
+/*h2{
+  font-size: 5em;
+  font-family: serif;
+  color:#008000;
+  text-align: center;
+  animation: animate 1.5s linear infinite;
+}
+
+@keyframes animate{
+  0%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 0.7;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+*/
+.direct-chat-text-wrapper{
+  min-height: 94px;
+}
     </style>
   </head>
   <body>
+    <body>
+<!--button type="button" id="logout" class="btn">Logout</button-->
+<input id="chatuid" type="hidden"> <!--conversation id-->
+<input id="product" type="hidden">
+<input id="release" type="hidden">
+<input id="chatid" type="hidden"> <!--indv chat id-->
+<input id="prevquestion" type="hidden">
+<input id="prevresponse" type="hidden">
+<input id="ratingValue" type="hidden">
+<input id="getrating" type="hidden" value="false">
+<div class="bg">
+      <!--h2 style="color:red;">Customer landing page</h2-->
+    <div id="chat-box" class="chat-box modal-content" style="width: 80%; margin-right: 10%; margin-bottom:3%";>
+      <div class="chat-box-header ">Ask Blink
+        <span class="chat-box-toggle"><i class="fa fa-window-close" aria-hidden="true"></i></span>
+      </div>
+      <div class="chat-box-body">
+                  <div class="chat-box-body" style="overflow:initial">
+                  <div class="direct-chat-messages" id="chathistory" style="display:block !important;height:450px; overflow: auto;">
+                  </div>
+                  <table class="commentssection" aria-labelledby="tcbz table" style="width:100%"><th scope="col" style="display:none;"></th>
+            			<tr><td width: 85%;>
+                    <input type="text" id="commentsmsg" name="message" placeholder="Ask a question ..." class="form-control" style="width: 98%;height: 35px;margin: 5px;">
+            				  </td>
+            			       <td style="width:4%;">
+                      <span class="input-group-btn">
+           		<input id="ask" type="button" name="Ask" value="Ask" class="btn" style="border-radius: 4px;height: 35px;"/>
+                        </span>
+                      </td>
+                        <td style="width:7%;">
+                        <input id="ticket" type="button" name="Raise ticket" value="Raise Ticket" class="btn" style="border-radius: 4px;height: 35px;display:none"/>
+                        </td>
+                         <td style="width:2%;">
+                           <button id="pastchat"><i class="fa fa-history"></i></button>
+                         </td>
+            			        </tr>
+            			         </table>
+                         </div>
+      </div>
+</div>
+    <div class="botIcon">
+    	<div id="chat-circle">
+    		<div class="iconInner">
+    			<i class="fa fa-commenting" aria-hidden="true"></i>
+    		</div>
+    	</div>
+      </div>
+<!--** star **/-->
+<!-- Button trigger modal -->
+<button id="starbutton" style="display:none" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel" style="color:white">Rate us</h5>
+        <button style="display:none" id="ratingclose" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+     <section class='rating-widget'>
+  <!-- Rating Stars Box -->
+  <div class='rating-stars text-center'>
+    <ul id='stars'>
+      <li class='star' title='Poor' data-value='1'>
+        <i class='fa fa-star fa-fw'></i>
+      </li>
+      <li class='star' title='Fair' data-value='2'>
+        <i class='fa fa-star fa-fw'></i>
+      </li>
+      <li class='star' title='Good' data-value='3'>
+        <i class='fa fa-star fa-fw'></i>
+      </li>
+      <li class='star' title='Excellent' data-value='4'>
+        <i class='fa fa-star fa-fw'></i>
+      </li>
+      <li class='star' title='WOW!!!' data-value='5'>
+        <i class='fa fa-star fa-fw'></i>
+      </li>
+    </ul>
+  </div>
+  <div class='success-box'>
+    <div class='text-message'></div>
+  </div>
+  <div class="fieldset" style="display: flex;flex-direction: column;background:#eeeeee">
+    <label for="usercomments">Comments</label>
+    <textarea name="usercomments" id="usercomments" cols="20" rows="5" required=""></textarea>
+  </div>
+</section>
+      </div>
+      <div class="modal-footer" style="display:flex;justify-content:center;">
+        <!--button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cance</button-->
+        <button id="saveratings" type="button" class="btn" stye="background: #293276;color: white;width: 90px;">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--stars-->
+
+      </div>
+</div>
     <header>
      <nav>
        <div class="nav-wrapper">
@@ -176,101 +466,7 @@
           </div>
         </div>
       </div>
-      <!--imported-->
-<div class="bg">
-<!--h2 style="color:red;">Customer landing page</h2-->
-<div id="chat-box" class="chat-box modal-content" style="width: 80%; margin-right: 10%; margin-bottom:3%";>
-<div class="chat-box-header ">Ask Blink
-  <span class="chat-box-toggle"><i class="fa fa-window-close" aria-hidden="true"></i></span>
-</div>
-<div class="chat-box-body">
-            <div class="chat-box-body" style="overflow:initial">
-            <div class="direct-chat-messages" id="chathistory" style="display:block !important;height:450px; overflow: auto;">
-            </div>
-            <table class="commentssection" aria-labelledby="tcbz table" style="width:100%"><th scope="col" style="display:none;"></th>
-            <tr><td width: 85%;>
-              <input type="text" id="commentsmsg" name="message" placeholder="Ask a question ..." class="form-control" style="width: 98%;height: 35px;margin: 5px;">
-                </td>
-                   <td style="width:4%;">
-                <span class="input-group-btn">
-        <input id="ask" type="button" name="Ask" value="Ask" class="btn" style="border-radius: 4px;height: 35px;"/>
-                  </span>
-                </td>
-                  <td style="width:7%;">
-                  <input id="ticket" type="button" name="Raise ticket" value="Raise Ticket" class="btn" style="border-radius: 4px;height: 35px;display:none"/>
-                  </td>
-                   <td style="width:2%;">
-                     <button id="pastchat"><i class="fa fa-history"></i></button>
-                   </td>
-                    </tr>
-                     </table>
-                   </div>
-</div>
-</div>
-<div class="botIcon">
-<div id="chat-circle">
-  <div class="iconInner">
-    <i class="fa fa-commenting" aria-hidden="true"></i>
-  </div>
-</div>
-</div>
-<!--** star **/-->
-<!-- Button trigger modal -->
-<button id="starbutton" style="display:none" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-</button>
 
-<!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-<div class="modal-dialog">
-<div class="modal-content">
-<div class="modal-header">
-  <h5 class="modal-title" id="staticBackdropLabel" style="color:white">Rate us</h5>
-  <button style="display:none" id="ratingclose" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-</div>
-<div class="modal-body">
-<section class='rating-widget'>
-<!-- Rating Stars Box -->
-<div class='rating-stars text-center'>
-<ul id='stars'>
-<li class='star' title='Poor' data-value='1'>
-  <i class='fa fa-star fa-fw'></i>
-</li>
-<li class='star' title='Fair' data-value='2'>
-  <i class='fa fa-star fa-fw'></i>
-</li>
-<li class='star' title='Good' data-value='3'>
-  <i class='fa fa-star fa-fw'></i>
-</li>
-<li class='star' title='Excellent' data-value='4'>
-  <i class='fa fa-star fa-fw'></i>
-</li>
-<li class='star' title='WOW!!!' data-value='5'>
-  <i class='fa fa-star fa-fw'></i>
-</li>
-</ul>
-</div>
-<div class='success-box'>
-<div class='text-message'></div>
-</div>
-<div class="fieldset" style="display: flex;flex-direction: column;background:#eeeeee">
-<label for="usercomments">Comments</label>
-<textarea name="usercomments" id="usercomments" cols="20" rows="5" required=""></textarea>
-</div>
-</section>
-</div>
-<div class="modal-footer" style="display:flex;justify-content:center;">
-  <!--button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cance</button-->
-  <button id="saveratings" type="button" class="btn" stye="background: #293276;color: white;width: 90px;">Save</button>
-</div>
-</div>
-</div>
-</div>
-<!--stars-->
-
-</div>
-</div>
-
-      <!--imported-->
       <div class="footer-copyright">
         <div class="container">
           © 2017 Copyright Text
