@@ -468,15 +468,5 @@
     <!-- Materialize JS CDN -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
       <script src="https://azure-tcsp.rfp.plus/webapp/js/newmain.js"></script>
-    <script>
-      $("document").ready(function(){
-         $(".button-collapse").sideNav();
-                fetch('https://azure-tcsp.rfp.plus/webapp/newmain.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('contentContainer').innerHTML = data;
-            });
-      });
-    </script>
   </body>
 </html>
