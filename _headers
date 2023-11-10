@@ -7,5 +7,5 @@
   Content-Security-Policy: script-src  'self' 'unsafe-inline' https://api.rfp.plus/ https://azure-tcsp.rfp.plus/ https://cdnjs.cloudflare.com/ https://code.jquery.com/
   Content-Security-Policy: style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com/ https://fonts.googleapis.com/
   Content-Security-Policy: style-src-elem 'self' 'unsafe-inline' https://cdnjs.cloudflare.com/ https://fonts.googleapis.com/
-  Access-Control-Allow-Origin: https://api.rfp.plus/ https://azure-tcsp.rfp.plus/
+  Access-Control-Allow-Origin: https://azure-tcsp.rfp.plus/ https://api.rfp.plus/
   
